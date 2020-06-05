@@ -5,9 +5,18 @@
     <meta charset="utf-8">
     <title>Contoh Leaflet GIS</title>
     <style>
-        #mapid {
-            width: 800px;
-            height: 600px;
+        .wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .body-content {
+            height: 500px;
+        }
+        
+        .body-content #mapid {
+            height: 100%;
+            width: 100%;
         }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
@@ -20,7 +29,6 @@
         <div class="body-content">
             <div id="mapid"></div>
         </div>
-
     </div>
     <script>
         var map = L.map('mapid').setView([-7.118736, 112.416550], 11);
