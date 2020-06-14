@@ -149,7 +149,7 @@
             //jadi data api dipanggil disini
             $.ajax({
                 type: 'GET',
-                url: "http://192.168.43.221:8000/api/peta/",
+                url: "https://damp-dusk-99939.herokuapp.com/api/peta",
                 dataType: 'json',
                 success: function(data) {
                     //disimpan dilocal storage datanya agar bisa dipanggil
@@ -168,7 +168,7 @@
             $.each(dataKu, function(num, item) {
                 desaItem = item.title;
                 // console.log(desa);
-                // console.log(desaItem);
+                // console.log(desaItem); 
                 if (desa.toUpperCase() == desaItem.toUpperCase()) {
                     color = item.history_category;
                     console.log(item.history_category);
