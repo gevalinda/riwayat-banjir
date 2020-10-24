@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Peta Riwayat Banjir di Lamongan</title>
+    <title>Peta Riwayat Banjir</title>
     <style>
         html,
         body {
@@ -68,13 +68,13 @@
     <div id="mapid"></div>
 
     <script>
-        var map = L.map('mapid').setView([-7.118736, 112.416550], 11);
+        var map = L.map('mapid').setView([-6.200000, 106.816666], 11);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://mapbox.com">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox.streets',
-            accessToken: 'pk.eyJ1Ijoicnlhbjkzc3AiLCJhIjoiY2pkMDJxZ2xpMGxjYTJxbzRtd3EzZnRzcCJ9.WsRQpljGbYjxw7za2_cPtA'
+            accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
         }).addTo(map);
 
         //Memberikan Efek pada setiap Featurenya
@@ -98,7 +98,7 @@
             map.fitBounds(e.target.getBounds());
         }
 
-        $.getJSON("https://gevalinda.github.io/desa_lamongan/desa_lamongan.json", function(data) {
+        $.getJSON("https://gevalinda.github.io/kelurahan_jakarta/kelurahanjakarta.json", function(data) {
 
             var riwayatlayer;
 
@@ -124,7 +124,7 @@
                         color: 'white',
                         dashArray: '3',
                         fillOpacity: 0.7,
-                        fillColor: getColorRiwayat(feature.properties.Desa)
+                        fillColor: getColorRiwayat(feature.properties.KEL_NAME)
                     };
                 }
 
@@ -133,7 +133,7 @@
 
             //Menambahkan pop out nama desa
             riwayatlayer.bindPopup(function(e) {
-                return e.feature.properties.Desa;
+                return e.feature.properties.KEL_NAME;
             });
         });
 
